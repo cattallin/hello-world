@@ -1,13 +1,11 @@
-node{
-	stages('Build') {
-		steps {
-			echo '%branch%'
-		}
-	}
+pipeline {
+   agent any
 
-	stages('End') {
-		steps {
-			echo 'gata'
-		}
-	}
+   stages {
+      stage('Hello') {
+         steps {
+            echo "${Branch}"
+         }
+      }
+   }
 }
